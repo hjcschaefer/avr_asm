@@ -10,8 +10,8 @@
 
 .equ FCPU = 16000000              ; 16 Mhz arduino micro
 
-.include "i2c.inc"
-.include "sh1106.inc"
+.include "..\lib\i2c\i2c.inc"
+.include "..\lib\sh1106\sh1106.inc"
 
 ; --------------------- RAM -----------------------
 .dseg
@@ -26,9 +26,9 @@
 
 .org INT_VECTORS_SIZE
 
-.include "no_timer_delays.asm"
-.include "i2c.asm"
-.include "sh1106.asm"
+.include "..\lib\delay\no_timer_delays.asm"
+.include "..\lib\i2c\i2c.asm"
+.include "..\lib\sh1106\sh1106.asm"
                    
 ; --------------------------- MAIN ------------------------------
 Reset:
